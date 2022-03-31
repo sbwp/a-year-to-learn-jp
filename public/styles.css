@@ -1,0 +1,51 @@
+body {
+	overflow: hidden;
+}
+
+.sidebar {
+	position: absolute;
+	left: 0;
+	height: calc(100vh - 40px);
+	width: calc(20vw + 20px);
+	overflow-y: scroll;
+	padding: 20px;
+	padding-right: 0;
+}
+
+.sidebar ul {
+	list-style: none;
+}
+
+.sidebar li {
+	margin: 10px;
+	margin-right: -1px;
+	padding: 10px;
+	padding-right: 0;
+	border: 1px solid black;
+	border-radius: 5px 0 0 5px;
+	border-right: none;
+}
+
+.sidebar li span {
+	padding-right: 10px;
+}
+
+.main-content {
+	position: absolute;
+	right: 0;
+	height: calc(100vh - 40px);
+	width: calc(80vw - 80px);
+	overflow-y: auto;
+	padding: 20px;
+}
+
+.collapse-button {
+	border: none;
+	background: none;
+	margin-right: 10px;
+}
+
+#rootNavList {
+	margin: 0;
+  	padding: 0;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "nihongo",
+  "version": "1.0.0",
+  "description": "Translate that Japanese in One Year document into a proper website with collapsible navigation and paging.",
+  "main": "convert.js",
+  "scripts": {
+    "convert": "node ./convert.js && copyfiles -u 1 public/**/* dist && copyfiles -u 1 original/images/**/* dist",
+    "serve": "cd dist && http-server -p 8086",
+    "test": "echo \"NO TESTS!\" && exit 1"
+  },
+  "author": "Sabrina Bea",
+  "license": "MIT",
+  "dependencies": {
+    "copyfiles": "^2.4.1",
+    "http-server": "^14.1.0"
+  }
+}
