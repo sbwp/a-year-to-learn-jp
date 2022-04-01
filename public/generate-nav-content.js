@@ -1,3 +1,4 @@
+// Parse sections from document
 const sections = [];
 const hiCollection = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
 const maxTitleLength = 72;
@@ -30,15 +31,8 @@ for (const h of hiCollection) {
 	destination.push(section);
 }
 
-const printSection = (section, spacing) => {
-	console.log(spacing + section.title);
-	section.subsections.forEach(sec => printSection(sec, spacing + '  '));
-}
-
-sections.forEach(sec => printSection(sec, ''));
-
+// Add section links to navbar
 const rootUl = document.getElementById('rootNavList');
-
 const allChildUls = [];
 
 const generateNavItem = (section, ul) => {
@@ -94,3 +88,13 @@ const setCollapseAllButtonText = () => {
 	document.getElementById('collapseAll').innerText = shouldHide() ? 'Collapse All' : 'Expand All';
 }
 setCollapseAllButtonText();
+
+// Remove Google external link warning from links
+const links = document.getElementsByTagName('a');
+const prefix = 'https://www.google.com/url?q=';
+for (const link of links) {
+	if (link.href.startsWith(prefix)) {
+		// Strip prefix and replace first ampersand with question mark
+		link.href = link.href.slice(prefix.length).replace('&', '?');
+	}
+}
